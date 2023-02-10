@@ -1,0 +1,347 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<!-- Mirrored from preview.colorlib.com/theme/shionhouse/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Jan 2023 09:04:56 GMT -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Fashion | Teamplate</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="site.html">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/progressbar_barfiller.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/gijgo.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/animated-headline.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<script nonce="9230ae8b-ff25-4298-ad89-d0b4043a7523">(function(w,d){!function(f,g,h,i){f[h]=f[h]||{};f[h].executed=[];f.zaraz={deferred:[],listeners:[]};f.zaraz.q=[];f.zaraz._f=function(j){return function(){var k=Array.prototype.slice.call(arguments);f.zaraz.q.push({m:j,a:k})}};for(const l of["track","set","debug"])f.zaraz[l]=f.zaraz._f(l);f.zaraz.init=()=>{var m=g.getElementsByTagName(i)[0],n=g.createElement(i),o=g.getElementsByTagName("title")[0];o&&(f[h].t=g.getElementsByTagName("title")[0].text);f[h].x=Math.random();f[h].w=f.screen.width;f[h].h=f.screen.height;f[h].j=f.innerHeight;f[h].e=f.innerWidth;f[h].l=f.location.href;f[h].r=g.referrer;f[h].k=f.screen.colorDepth;f[h].n=g.characterSet;f[h].o=(new Date).getTimezoneOffset();if(f.dataLayer)for(const s of Object.entries(Object.entries(dataLayer).reduce(((t,u)=>({...t[1],...u[1]})))))zaraz.set(s[0],s[1],{scope:"page"});f[h].q=[];for(;f.zaraz.q.length;){const v=f.zaraz.q.shift();f[h].q.push(v)}n.defer=!0;for(const w of[localStorage,sessionStorage])Object.keys(w||{}).filter((y=>y.startsWith("_zaraz_"))).forEach((x=>{try{f[h]["z_"+x.slice(7)]=JSON.parse(w.getItem(x))}catch{f[h]["z_"+x.slice(7)]=w.getItem(x)}}));n.referrerPolicy="origin";n.src="../../cdn-cgi/zaraz/sd0d9.js?z="+btoa(encodeURIComponent(JSON.stringify(f[h])));m.parentNode.insertBefore(n,m)};["complete","interactive"].includes(g.readyState)?zaraz.init():f.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body class="full-wrapper">
+
+<div id="preloader-active">
+<div class="preloader d-flex align-items-center justify-content-center">
+<div class="preloader-inner position-relative">
+<div class="preloader-circle"></div>
+<div class="preloader-img pere-text">
+<img src="{% static 'assets/img/logo/loder.png' %}" alt="">
+</div>
+</div>
+</div>
+</div>
+
+<header>
+
+<div class="header-area ">
+<div class="main-header header-sticky">
+<div class="container-fluid">
+<div class="menu-wrapper d-flex align-items-center justify-content-between">
+  <div class="header-left d-flex align-items-center">
+
+<div class="logo">
+  <a href="index.html"><img src="{% static 'assets/img/logo/logo.png' %}" alt=""></a>
+</div>
+
+<div class="main-menu  d-none d-lg-block">
+  <nav>
+    <ul id="navigation">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'shop' %}">shop</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'blog'%}">Blog</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+
+      {% if user.is_authenticated %}
+      <li><a href="#">Hi, {{user.username}}</a>
+        <ul class="submenu">
+          <li><a href="{% url 'logout_view' %}"><i>sign out</i></a></li>
+          <li><a href="{% url 'politique' %}"><i>Politique de confidentialité</i></a></li>
+        </ul>
+      </li>
+      {% else %}
+      <li><a href="#">Connexion</a>
+        <ul class="submenu">
+          <li><a href="{% url 'login_view' %}"><i>Sign in</i></a></li>
+          <li><a href="{% url 'register_view' %}"><i>Sign up</i></a></li>
+        </ul>
+      </li>
+      {% endif %}
+
+    </ul>
+  </nav>
+</div>
+</div>
+
+<div class="header-right1 d-flex align-items-center">
+
+<div class="header-social d-none d-md-block">
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="{% static 'https://bit.ly/sai4ull' %}"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-pinterest-p"></i></a>
+</div>
+
+<div class="search d-none d-md-block">
+<ul class="d-flex align-items-center">
+<li class="mr-15">
+<div class="nav-search search-switch">
+<i class="ti-search"></i>
+</div>
+</li>
+<li>
+
+<div class="card-stor">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <img src="{% static 'assets/img/gallery/card.svg' %}" alt="">
+      <span>0</span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color: rgb(233, 241, 255);">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mon panier</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+</li>
+</ul>
+</div>
+</div>
+
+<div class="col-12">
+<div class="mobile_menu d-block d-lg-none"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</header>
+
+<main>
+    <div class="page-notification page-notification2">
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb justify-content-center">
+<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item"><a href="#">Politique de confidentialité</a></li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+
+
+    <br>
+<h2 style="text-align: center;">Politique de confidentialité</h2>
+<br><br>
+<p style="text-align: center; color: red;">! veuillez lire attentivement ces informations pour une meilleur utilisation de notre site !</p>
+<br>
+<p>
+<li><b>Recueil et utilisation des informations :</b>Nous recueillons des informations sur nos clients pour améliorer leur expérience d'achat et offrir un service personnalisé.</li>
+<br>
+<li><b>Partage des informations :</b> Nous ne partageons ni vendons les informations de nos clients à des tiers sans leur consentement explicite.</li>
+<br>
+<li><b>Sécurité des données :</b> Nous prenons des mesures pour protéger les informations de nos clients en utilisant les technologies de sécurité standard de l'industrie.</li>
+<br>
+<li><b>Cookies :</b> Nous utilisons des cookies pour enregistrer les préférences de nos clients et améliorer l'expérience d'achat en ligne.</li>
+<br>
+<li><b>Consentement :</b> En utilisant notre site, les clients donnent leur consentement à notre politique de confidentialité</li>
+<br>
+<li><b>Modifications :</b> Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment en publiant les mises à jour sur notre site. Les clients sont invités à consulter régulièrement cette politique pour rester informés des éventuelles modifications.</li>
+<br>
+<li><b>Transfert international :</b> Si vous transférez les données de vos clients dans d'autres pays, vous devez les informer et obtenir leur consentement</li>
+<br>
+<li><b>Réclamation de la protection de la vie privée :</b> Les clients peuvent demander l'accès, la correction ou la suppression de leurs informations personnelles en contactant notre service clientèle.</li>
+<br>
+<li><b>Sécurité des paiements :</b> nous utilisons des méthodes de paiement sécurisées pour protéger les informations financières de nos clients.</li>
+<br>
+<li><b>Partenaires commerciaux : </b> nous pouvons partager des informations avec nos partenaires commerciaux pour l'exécution de transactions et la livraison de produits.</li>
+<br>
+<li><b>Enfants :</b> Notre site ne s'adresse pas aux enfants de moins de 13 ans et nous ne collectons pas intentionnellement des informations sur des enfants de cet âge</li>
+<br>
+<li><b>Divulgation légale :</b> Nous pouvons être tenus de divulguer les informations de nos clients si la loi l'exige.</li>
+<br>
+<li><b>Confidentialité des enfants :</b> Nous ne recueillons pas intentionnellement d'informations sur les enfants de moins de 13 ans et nous encourageons les parents à surveiller les activités en ligne de leurs enfants.</li>
+</p>
+    </main>
+
+
+<br><br><br><br>
+    <footer>
+
+<div class="footer-area footer-padding">
+<div class="container-fluid ">
+<div class="row d-flex justify-content-between">
+<div class="col-xl-3 col-lg-3 col-md-8 col-sm-8">
+<div class="single-footer-caption mb-50">
+<div class="single-footer-caption mb-30">
+
+<div class="footer-logo mb-35">
+<a href="index.html"><img src="{% static 'assets/img/logo/logo2_footer.png' %}" alt=""></a>
+</div>
+<div class="footer-tittle">
+<div class="footer-pera">
+<p>Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+</div>
+</div>
+
+<div class="footer-social">
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="{% static 'https://bit.ly/sai4ull' %}"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-pinterest-p"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+<div class="single-footer-caption mb-50">
+<div class="footer-tittle">
+<h4>Quick links</h4>
+<ul>
+<li><a href="#">Image Licensin</a></li>
+<li><a href="#">Style Guide</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+<div class="single-footer-caption mb-50">
+<div class="footer-tittle">
+<h4>Shop Category</h4>
+<ul>
+<li><a href="#">Image Licensin</a></li>
+<li><a href="#">Style Guide</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+<div class="single-footer-caption mb-50">
+<div class="footer-tittle">
+<h4>Pertners</h4>
+<ul>
+<li><a href="#">Image Licensin</a></li>
+<li><a href="#">Style Guide</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xl-2 col-lg-3 col-md-4 col-sm-4">
+<div class="single-footer-caption mb-50">
+<div class="footer-tittle">
+<h4>Get in touch</h4>
+<ul>
+<li><a href="#">(89) 982-278 356</a></li>
+<li><a href="#"><span class="__cf_email__" data-cfemail="791d1c1416391a1615160b15101b571a1614">[email&#160;protected]</span></a></li>
+<li><a href="#">67/A, Colorlib, Green road, NYC</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom-area">
+<div class="container">
+<div class="footer-border">
+<div class="row d-flex align-items-center">
+<div class="col-xl-12 ">
+<div class="footer-copy-right text-center">
+<p>
+Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a target="_blank">Dylan</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
+
+<div class="search-model-box">
+<div class="h-100 d-flex align-items-center justify-content-center">
+<div class="search-close-btn">+</div>
+<form class="search-model-form">
+<input type="text" id="search-input" placeholder="Searching key.....">
+</form>
+</div>
+</div>
+
+
+<div id="back-top">
+<a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+
+<script src="{% static 'assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.slicknav.min.js' %}"></script>
+
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/animated.headline.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.js' %}"></script>
+<script src="{% static 'assets/js/gijgo.min.js' %}"></script>
+
+<script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+<script src="{% static 'assets/js/jquery.barfiller.js' %}"></script>
+
+<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'assets/js/hover-direction-snake.min.js' %}"></script>
+
+<script src="{% static 'assets/js/contact.js' %}"></script>
+<script src="{% static 'assets/js/jquery.form.js' %}"></script>
+<script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'assets/js/mail-script.js' %}"></script>
+<script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+<script async src="{% static 'https://www.googletagmanager.com/gtag/js?id=UA-23581568-13' %}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="{% static 'https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993' %}" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"78a5af601a2c0bce","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/shionhouse/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Jan 2023 09:09:37 GMT -->
+</html>

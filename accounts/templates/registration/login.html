@@ -1,0 +1,94 @@
+{% load static %}
+{% block content %}
+<form action="" method="POST">
+    <style>
+        .card {
+          background-color: white;
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+          width: 900px;
+          height: 550px;
+          margin: auto;
+          display: flex;
+        }
+        .left-side {
+          background-color: #2196f3;
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+        }
+        .left-side img {
+          width: 80%;
+        }
+        .right-side {
+          background-color: white;
+          width: 50%;
+          height: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .form-group {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        .form-group label {
+          font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+          width: 100%;
+          height: 40px;
+          border-radius: 5px;
+          border: 1px solid lightgray;
+          padding: 10px;
+          font-size: 14px;
+        }
+        .form-group input[type="submit"] {
+          width: 100%;
+          height: 40px;
+          background-color: #2196f3;
+          color: white;
+          border-radius: 5px;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      </style>
+      
+      <div class="card">
+        <div class="left-side">
+          <img src="https://trucmania.ouest-france.fr/wp-content/uploads/2022/02/booster-connexion-internet.jpg" style="height: 100%; width: 100%;" alt="">
+        </div>
+        <div class="right-side">
+          <h2>Connectez-vous</h2>
+          <form>
+            <div class="form-group">
+              <label for="username">Nom d'utilisateur :</label>
+              <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required>
+              </div>
+
+
+              {% csrf_token %}
+              <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary">
+              </div>
+
+            <br><br>
+            <button><a href="{% url 'register_view' %}" class="form-group" style="text-decoration: none;">S' inscrire</a></button>
+
+            </form>
+          </div>
+        </div>
+</form>
+{% endblock content %}
